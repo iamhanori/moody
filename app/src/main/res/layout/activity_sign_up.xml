@@ -84,7 +84,8 @@
                 android:backgroundTint="@color/normal"
                 android:text="다음"
                 android:textColor="@color/gray_1"
-                android:layout_weight="1"   />
+                android:layout_weight="1"
+                android:layout_marginBottom="10sp"/>
         </LinearLayout>
 
     </LinearLayout>
