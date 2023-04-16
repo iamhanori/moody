@@ -41,23 +41,23 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:backgroundTint="@color/gray_4"
                 android:ems="9"
-                android:textSize="15sp"
-                android:hint="이메일"/>
+                android:hint="이메일"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@"
-                android:textSize="18sp"
+                android:layout_centerInParent="true"
+                android:text="\u0040"
                 android:textColor="@color/gray_10"
-                android:layout_centerInParent="true"/>
+                android:textSize="18sp" />
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:backgroundTint="@color/gray_4"
                 android:ems="9"
                 android:textSize="15sp"
@@ -76,7 +76,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:backgroundTint="@color/gray_4"
             android:hint="영문, 숫자, 특수문자 조합 8자리 이상"
             android:drawableEnd="@drawable/eye"
@@ -85,7 +85,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:backgroundTint="@color/gray_4"
             android:hint="비밀번호 재확인"
             android:drawableEnd="@drawable/eye"
