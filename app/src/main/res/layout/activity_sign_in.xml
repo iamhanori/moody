@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="회원가입"
+            android:text="로그인"
             android:textSize="25sp"
             android:textColor="@color/gray_10"
             android:paddingTop="100sp" />
@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이메일"
+            android:text="아이디"
             android:textColor="@color/gray_10"
             android:paddingTop="50sp"
             android:textSize="18sp"/>
@@ -58,14 +58,11 @@
             android:paddingTop="20sp"
             android:textSize="15sp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/gray_4"
-            android:hint="비밀번호 재확인"
-            android:drawableEnd="@drawable/eye"
-            android:paddingTop="20sp"
-            android:textSize="15sp"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/bg_round_checkbox_button"
+            android:text="   자동로그인"/>
 
         <View
             android:layout_width="match_parent"
@@ -77,14 +74,55 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <Button
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/normal"
-                android:text="다음"
-                android:textColor="@color/gray_1"
-                android:layout_weight="1"   />
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:paddingBottom="20sp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="회원가입하기"
+                        android:paddingEnd="10sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="|"
+                        android:paddingEnd="10sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="아이디 찾기"
+                        android:paddingEnd="10sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="|"
+                        android:paddingEnd="10sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="비밀번호 변경" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/normal"
+                    android:text="다음"
+                    android:textColor="@color/gray_1"
+                    android:layout_weight="1"   />
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
