@@ -19,6 +19,7 @@
         <!--        android:src="@drawable/backward1" />-->
 
         <ImageView
+            android:id="@+id/upiv_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/backward3"
@@ -88,7 +89,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/upbt_next"
+                android:id="@+id/upbtn_next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/normal"

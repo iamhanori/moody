@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,7 +25,9 @@ public class SignUpActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseRef; // 실시간 데이터 베이스
 
     private EditText et_Email, et_Pwd; // 이메일, 비밀번호
-    private Button bt_Next;
+    private Button btn_Next;
+
+    private ImageView iv_arrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +43,10 @@ public class SignUpActivity extends AppCompatActivity {
 
         et_Email = findViewById(R.id.upet_email);
         et_Pwd = findViewById(R.id.upet_password);
-        bt_Next =findViewById(R.id.upbt_next);
+        btn_Next =findViewById(R.id.upbtn_next);
+        iv_arrow = findViewById(R.id.upiv_arrow);
 
-        // 다음 버튼
-        bt_Next.setOnClickListener(new View.OnClickListener() {
+        btn_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 회원가입 처리 시작
@@ -62,18 +65,24 @@ public class SignUpActivity extends AppCompatActivity {
                             account.setPassword(strPwd);
 
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
-                            Toast.makeText(SignUpActivity.this, "회원 가입 성공", Toast.LENGTH_SHORT).show();
-
-                            Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                            startActivity(intent);
-                            finish();
-
+                            Toast.makeText(SignUpActivity.this, "회원 등록 성공", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(SignUpActivity.this, "회원 가입 실패", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "회원 등록 실패", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             }
         });
+
+        // 뒤로가기
+        iv_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 }

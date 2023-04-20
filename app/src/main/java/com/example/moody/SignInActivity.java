@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,12 +21,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+// login
 public class SignInActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;   // 파이어베이스 인증
     private DatabaseReference mDatabaseRef; // 실시간 데이터 베이스
 
-    private EditText et_Id, et_Pwd; // 이메일, 비밀번호
-    private Button inbt_Next;
+    private EditText et_Email, et_Pwd; // 이메일, 비밀번호
+    private Button inbtn_Next; // 다음 버튼
+
+    private TextView tv_signup; // 회원가입하기
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,29 +43,42 @@ public class SignInActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
-        et_Id = findViewById(R.id.inet_id);
+        et_Email = findViewById(R.id.inet_Email);
         et_Pwd = findViewById(R.id.inet_password);
-        inbt_Next = findViewById(R.id.inbt_next);
+        inbtn_Next = findViewById(R.id.inbtn_next);
+        tv_signup = (TextView) findViewById(R.id.intv_signup);
 
-        inbt_Next.setOnClickListener(new View.OnClickListener() {
+        inbtn_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String strEmail = et_Id.getText().toString();
+                String strEmail = et_Email.getText().toString();
                 String strPwd = et_Pwd.getText().toString();
 
                 mFirebaseAuth.signInWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(SignInActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
+                            // 로그인 성공 (MainActivity로 이동)
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                             startActivity(intent);
-                            fileList();
+                            finish();
                         } else {
-                            Toast.makeText(SignInActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, "로그인 되었습니다.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             }
         });
+
+        // 회원가입하기 텍스트
+        tv_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 }

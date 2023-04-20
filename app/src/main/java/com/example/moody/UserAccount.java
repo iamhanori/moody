@@ -6,16 +6,16 @@ public class UserAccount {
     public UserAccount() {
     }
 
-    public String IdToKen;
+    public String idToKen;
     public String Email;
     public String Password;
 
     public String getIdToKen() {
-        return IdToKen;
+        return idToKen;
     }
 
     public void setIdToKen(String idToKen) {
-        IdToKen = idToKen;
+        idToKen = idToKen;
     }
 
     public String getEmail() {
