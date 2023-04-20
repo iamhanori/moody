@@ -65,12 +65,17 @@ public class SignUpActivity extends AppCompatActivity {
                             account.setPassword(strPwd);
 
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
-                            Toast.makeText(SignUpActivity.this, "회원 등록 성공", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "회원 등록 성공", Toast.LENGTH_LONG).show();
                         } else {
-                            Toast.makeText(SignUpActivity.this, "회원 등록 실패", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "회원 등록 실패", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
+
+                Intent intent = new Intent(SignUpActivity.this, SignFinishActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 

@@ -59,11 +59,12 @@ public class SignInActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             // 로그인 성공 (MainActivity로 이동)
+                            Toast.makeText(SignInActivity.this, "로그인 되었습니다.", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
-                            Toast.makeText(SignInActivity.this, "로그인 되었습니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, "아이디 및 비밀번호가 올바르지 않습니다.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
