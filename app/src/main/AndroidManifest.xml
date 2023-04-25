@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Moody"
         tools:targetApi="31">
         <activity
+            android:name=".MarketDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false"
             android:label="@string/title_activity_profile" />
