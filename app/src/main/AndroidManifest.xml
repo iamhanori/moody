@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Moody"
         tools:targetApi="31">
         <activity
+            android:name=".MarketCartActivity"
+            android:exported="false" />
+        <activity
             android:name=".MarketDetailActivity"
             android:exported="false" />
         <activity
