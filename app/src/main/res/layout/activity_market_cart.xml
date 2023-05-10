@@ -128,7 +128,7 @@
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="10sp" />
     </ScrollView>
 
@@ -177,5 +177,4 @@
         android:text="주문하기"
         android:textStyle="bold"/>
     </LinearLayout>
-
 </LinearLayout>
