@@ -176,5 +176,5 @@
         android:layout_marginBottom="15sp"
         android:text="주문하기"
         android:textStyle="bold"/>
-    </LinearLayout>
+
 </LinearLayout>
