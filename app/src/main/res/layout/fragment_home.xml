@@ -21,6 +21,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/moody"
+            app:backgroundTint="@color/normal"
+            app:layout_anchor="@id/navigation"
+            app:tint="@android:color/white" />
+
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/navigation"
             android:layout_width="match_parent"
@@ -43,14 +52,5 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.bottomappbar.BottomAppBar>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/categories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/moody"
-            app:backgroundTint="@color/normal"
-            app:layout_anchor="@id/navigation"
-            app:tint="@android:color/white" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

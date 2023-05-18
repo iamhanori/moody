@@ -4,6 +4,7 @@
     <string name="title_product">상품</string>
     <string name="title_store">스토어</string>
     <string name="title_my">마이페이지</string>
+    <string name="sign_email">이메일</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_search">SearchActivity</string>
