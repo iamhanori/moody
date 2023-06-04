@@ -5,40 +5,10 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/container"
+        android:id="@+id/main_frame"
         android:orientation="vertical"
         tools:context=".HomeActivity"
         android:layout_marginTop="40sp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="20sp"
-            android:layout_marginEnd="20sp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/moody" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/search"
-                    android:layout_gravity="right"/>
-            </LinearLayout>
-        </LinearLayout>
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/navigation"
@@ -56,13 +26,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginEnd="16dp"
-                    android:background="@android:color/transparent"
-                    app:menu="@menu/bottom_nav_menu"/>
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#fff"
+                    app:labelVisibilityMode="unlabeled"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:menu="@menu/bottom_nav_menu" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/categories"
+            android:id="@+id/floatingbtn_moody"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/moody"
@@ -70,6 +44,4 @@
             app:layout_anchor="@id/navigation"
             android:tint="@color/white"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 </layout>

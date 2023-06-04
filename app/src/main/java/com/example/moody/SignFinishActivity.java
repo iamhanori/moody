@@ -27,7 +27,7 @@ public class SignFinishActivity extends AppCompatActivity {
         btn_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignFinishActivity.this, HomeActivity.class);
+                Intent intent = new Intent(SignFinishActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
