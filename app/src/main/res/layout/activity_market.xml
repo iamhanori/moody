@@ -21,7 +21,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/search"/>
@@ -43,10 +44,12 @@
             </FrameLayout>
 
             <ListView
+                android:id="@+id/market_list"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginTop="30sp"/>
+                android:layout_marginTop="30sp"
+                android:textColor="@color/gray_10"/>
 
         </LinearLayout>
 
