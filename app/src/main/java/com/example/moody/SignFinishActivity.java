@@ -31,7 +31,7 @@ public class SignFinishActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // 텍스트 바꾸기
-                idText.setText();
+//                idText.setText();
                 Intent intent = new Intent(SignFinishActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
