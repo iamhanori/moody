@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MetaverseActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/meta_backward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backward3"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="40sp"
+            android:layout_marginStart="20sp"/>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/relativeLayout1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:indeterminate="true"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/progress"
+            tools:ignore="UnknownId" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="현재 서비스 준비 중입니다."
+            android:textSize="20sp"
+            android:textColor="@color/gray_10"
+            android:gravity="center"
+            android:layout_marginTop="150sp"/>
+    </RelativeLayout>
+</LinearLayout>
