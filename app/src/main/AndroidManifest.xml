@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Moody"
         tools:targetApi="31">
         <activity
+            android:name=".ProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".MetaverseActivity"
             android:exported="false" />
         <activity
