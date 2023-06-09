@@ -41,7 +41,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layhout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="친환경 생리대 · 유기농"
                     android:textSize="10sp"
