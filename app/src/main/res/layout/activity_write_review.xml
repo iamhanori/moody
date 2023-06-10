@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="30sp"
+    android:layout_marginStart="20sp"
+    android:layout_marginEnd="20sp"
+    tools:context=".WriteReviewActivity">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backward3"
+        android:background="@android:color/transparent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="80sp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="제목"
+            android:textColor="@color/gray_10"
+            android:background="@null"
+            android:maxLength="50"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="후기 등록"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/normal"
+            android:background="@drawable/btn_border"/>
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="30sp"/>
+
+    <Button
+        android:id="@+id/review_add_img"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:background="@drawable/btn_border"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:hint="제품의 후기를 자유롭게 써주세요!\n위의 네모를 클릭하시면 갤러리의 사진을 넣을 수 있습니다!"
+        android:textColor="@color/gray_10"
+        android:background="@null"
+        android:layout_marginTop="20sp"
+        android:maxLength="300"/>
+
+</LinearLayout>
