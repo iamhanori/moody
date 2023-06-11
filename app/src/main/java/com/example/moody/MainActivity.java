@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -23,13 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     FloatingActionButton moody;
 
-    private ViewPager2 sliderViewPager;
-    private LinearLayout layoutIndicator;
-
-    private String[] images = new String[] {
-            "https://www.figma.com/file/UmCsMspS1dVnSZ0Vcm12bl/%23moody?type=design&node-id=1500-202&t=fgX5azEvpiYwIJvb-4",
-            "https://www.figma.com/file/UmCsMspS1dVnSZ0Vcm12bl/%23moody?type=design&node-id=1479-203&t=fgX5azEvpiYwIJvb-4"
-    };
+    ImageButton home_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,33 +69,8 @@ public class MainActivity extends AppCompatActivity {
         // 앱바 없애기
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-//
-//        sliderViewPager = (ViewPager2) findViewById(R.id.sliderViewPager);
-//        layoutIndicator = findViewById(R.id.layoutIndicators);
-//
-//        sliderViewPager.setOffscreenPageLimit(1);
-//        sliderViewPager.setAdapter(new ImageSliderAdapter(this, images));
-//
-//        sliderViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-//            @Override
-//            public void onPageSelected(int position) {
-//                super.onPageSelected(position);
-//            }
-//        });
-//        setupIndicators(images.length);
-    }
 
-    private void setupIndicators(int count) {
-        ImageView[] indicators = new ImageView[count];
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-
-        params.setMargins(16,8,16,8);
-
-        for(int i = 0; i < indicators.length; i++) {
-            indicators[i] = new ImageView(this);
-            indicators[i].setLayoutParams(params);
-            layoutIndicator.addView(indicators[i]);
-        }
+        home_image = findViewById(R.id.home_info_img);
     }
 
     // 화면 전환
