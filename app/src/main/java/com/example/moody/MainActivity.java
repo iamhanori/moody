@@ -1,6 +1,8 @@
 package com.example.moody;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -58,15 +60,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//        // 플로팅 버튼
-//        moody = (FloatingActionButton) findViewById(R.id.floatingbtn_moody);
-//        moody.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, M.class);
-//                startActivityForResult(intent);
-//            }
-//        });
+        // 플로팅 버튼
+        moody = (FloatingActionButton) findViewById(R.id.floatingbtn_moody);
+        moody.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, M.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         // 앱바 없애기
         ActionBar actionBar = getSupportActionBar();

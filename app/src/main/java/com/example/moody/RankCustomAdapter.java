@@ -14,26 +14,26 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
+public class RankCustomAdapter extends RecyclerView.Adapter<RankCustomAdapter.RankCustomViewHolder> {
     private ArrayList<RankData> rankList;
     private Context context;
 
-    public CustomAdapter(ArrayList<RankData> rankList, Context context) {
+    public RankCustomAdapter(ArrayList<RankData> rankList, Context context) {
         this.rankList = rankList;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public CustomAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RankCustomAdapter.RankCustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ranklist_item, parent, false);
-        CustomViewHolder holder = new CustomViewHolder(view);
+        RankCustomViewHolder holder = new RankCustomViewHolder(view);
 
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RankCustomViewHolder holder, int position) {
         holder.tv_ranking.setText(rankList.get(position).getRanking());
         Glide.with(holder.itemView)
                 .load(rankList.get(position).getMarket())
@@ -48,12 +48,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         return (rankList != null ? rankList.size() : 0);
     }
 
-    public class CustomViewHolder extends RecyclerView.ViewHolder {
+    public class RankCustomViewHolder extends RecyclerView.ViewHolder {
         TextView tv_ranking;
         ImageView iv_market;
         TextView tv_name;
         TextView tv_detail;
-        public CustomViewHolder(@NonNull View itemView) {
+        public RankCustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.iv_market = itemView.findViewById(R.id.iv_market);
             this.tv_ranking = itemView.findViewById(R.id.tv_ranking);

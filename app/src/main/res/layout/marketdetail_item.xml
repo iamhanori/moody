@@ -9,10 +9,12 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/iv_product"
             android:layout_width="130dp"
             android:layout_height="130dp" />
 
         <TextView
+            android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5,100원"
@@ -21,6 +23,7 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="[팬티라이너] 네이처랩 유기농 순면커버 팬티라이너"
