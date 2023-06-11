@@ -146,3 +146,4 @@
             app:layout_anchor="@id/navigation"
             android:tint="@color/white"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

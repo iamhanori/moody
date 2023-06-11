@@ -71,20 +71,20 @@ public class MainActivity extends AppCompatActivity {
         // 앱바 없애기
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-
-        sliderViewPager = findViewById(R.id.sliderViewPager);
-        layoutIndicator = findViewById(R.id.layoutIndicators);
-
-        sliderViewPager.setOffscreenPageLimit(1);
-        sliderViewPager.setAdapter(new ImageSliderAdapter(this, images));
-
-        sliderViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-            }
-        });
-        setupIndicators(images.length);
+//
+//        sliderViewPager = (ViewPager2) findViewById(R.id.sliderViewPager);
+//        layoutIndicator = findViewById(R.id.layoutIndicators);
+//
+//        sliderViewPager.setOffscreenPageLimit(1);
+//        sliderViewPager.setAdapter(new ImageSliderAdapter(this, images));
+//
+//        sliderViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+//            @Override
+//            public void onPageSelected(int position) {
+//                super.onPageSelected(position);
+//            }
+//        });
+//        setupIndicators(images.length);
     }
 
     private void setupIndicators(int count) {
