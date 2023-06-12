@@ -1,5 +1,6 @@
 package com.example.moody;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class Store extends Fragment {
+    private ImageView iv_cart;
+
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManger;
@@ -33,6 +37,19 @@ public class Store extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_store, container, false);
+
+
+        iv_cart = view.findViewById(R.id.iv_cart);
+        iv_cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MarketCartActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+
+        //// market ranking database
 
         recyclerView = (RecyclerView) view.findViewById(R.id.rankView);
         // recyclerView.setHasFixedSize(true);
@@ -68,6 +85,7 @@ public class Store extends Fragment {
         recyclerView.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
 
        return view;
+
     }
 
 }
