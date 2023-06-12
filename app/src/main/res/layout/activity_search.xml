@@ -25,11 +25,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
+                    <ImageButton
+                        android:id="@+id/btn_back_search"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/backward3"
-                        android:layout_marginTop="40sp"/>
+                        android:layout_marginTop="40sp"
+                        android:background="@android:color/transparent"/>
 
                     <EditText
                         android:layout_width="match_parent"

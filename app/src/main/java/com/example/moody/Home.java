@@ -32,6 +32,7 @@ public class Home extends Fragment {
     private DatabaseReference databaseReference;
 
     private ImageButton home_info_img;
+    private ImageButton btn_search;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +46,7 @@ public class Home extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         productList = new ArrayList<>();
         home_info_img = (ImageButton) view.findViewById(R.id.home_info_img);
+        btn_search = (ImageButton) view.findViewById(R.id.btn_search);
 
         database = FirebaseDatabase.getInstance();
 
@@ -72,6 +74,15 @@ public class Home extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), HomeInfoActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
