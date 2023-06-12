@@ -78,6 +78,18 @@
             android:layout_gravity="center"
             android:gravity="center"/>
 
+        <EditText
+            android:id="@+id/inet_period"
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:ems="15"
+            android:backgroundTint="@color/gray_4"
+            android:hint="월경 주기를 입력하세요 (ex. 25)"
+            android:textSize="15sp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
