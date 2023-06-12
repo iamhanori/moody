@@ -1,5 +1,6 @@
 package com.example.moody;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +31,8 @@ public class Home extends Fragment {
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
 
+    private ImageButton home_info_img;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,6 +44,7 @@ public class Home extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         productList = new ArrayList<>();
+        home_info_img = (ImageButton) view.findViewById(R.id.home_info_img);
 
         database = FirebaseDatabase.getInstance();
 
@@ -62,6 +67,15 @@ public class Home extends Fragment {
         });
         adapter = new ProductCustomAdapter(productList, getActivity());
         recyclerView.setAdapter(adapter);
+
+        home_info_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HomeInfoActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

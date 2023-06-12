@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -69,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
         // 앱바 없애기
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-
-        home_image = findViewById(R.id.home_info_img);
     }
 
     // 화면 전환

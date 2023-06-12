@@ -16,11 +16,13 @@
         android:theme="@style/Theme.Moody"
         tools:targetApi="33">
         <activity
-            android:name=".WriteReviewActivity"
+            android:name=".HomeInfoActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".ProductActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".WriteReviewActivity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".ProductActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".MetaverseActivity"
             android:exported="false" />

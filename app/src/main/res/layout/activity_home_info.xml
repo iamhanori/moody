@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="30sp"
+    android:layout_marginStart="20sp"
+    android:layout_marginEnd="20sp"
+    tools:context=".HomeInfoActivity"
+    android:id="@+id/info_layout">
+
+    <ImageButton
+        android:id="@+id/info_back_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backward3"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/transparent"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:src="@drawable/home1"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전문가가 알려주는 초경 준비물"
+        android:textColor="@color/gray_10"
+        android:textSize="20sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:layout_marginTop="20sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:textSize="16sp"
+            android:text="  여성은 평생 월경을 얼마나 해야 할까요? 여성은 평균 월경을 5일, 그리고 35년에서 37년 정도를 한다고 해요. 거의 반평생을 해야 하는 월경, 그 시작은 바로 초경입니다. \n  보통 초경은 11살-14살 사이에 시작해요. 하지만 늦으면 18살-19살에 시작하는 사람도 있으니, 내가 너무 늦더라도 불안해하지 않길 바라요! \n  초경을 시작하며 사람들이 가장 놀란 건, 바로 속옷에 갈색 혈이 뭍어나오는 것이에요. 하지만 초경을 할 땐 월경 혈이 많이 나오진 않으니 걱정하지 말아요! \n  그럼 이제 초경 준비물을 알아볼까요? \n    1. 월경대 : 언제 혈이 나올지 모르니 대비해두고 있어야 해요. 초경엔 혈이 별로 나오지 않으니 팬티라이너도 괜찮지만, 사람에 따라 그 양은 다르니 꼭 여러 크기의 월경대를 챙기기로 해요. \n    2. 위생 팬티 : 월경 기간에 입는 전용 팬티예요. 일반 면 속옷과는 달리 코팅이 되어 있어 혈이 새도 잘 지워져요. \n    3. 파우치 : 월경대를 넣을 수 있고 쉽게 들고 다니기 위해선 파우치가 필요해요. 이건 선택 사항이니 그저 참고만 해두기로 해요! \n  월경은 부끄럽지도, 창피하지도 않은 자연스러운 현상이에요. 초경이 시작되면 바로 부모님께 도움을 \n요청합시다!" />
+    </ScrollView>
+
+
+</LinearLayout>
