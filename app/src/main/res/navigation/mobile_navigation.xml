@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_product"
-        android:name="com.example.moody.Product"
+        android:name="com.example.moody.Review"
         android:label="상품"
-        tools:layout="@layout/fragment_product" />
+        tools:layout="@layout/fragment_review" />
 
     <fragment
         android:id="@+id/navigation_store"

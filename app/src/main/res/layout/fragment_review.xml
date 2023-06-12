@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="30sp"
+    android:layout_marginStart="20sp"
+    android:layout_marginEnd="20sp"
+    tools:context=".Review">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_review_backward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backward3"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="리뷰"
+            android:gravity="center"
+            android:textColor="@color/gray_10"
+            android:textSize="20sp"/>
+
+        <ImageButton
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰 "
+            android:textColor="@color/gray_10"
+            android:textSize="23sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="000"
+            android:textColor="@color/gray_10"
+            android:textSize="23sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개"
+            android:textColor="@color/gray_10"
+            android:textSize="23sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

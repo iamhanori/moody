@@ -3,19 +3,14 @@ package com.example.moody;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.moody.databinding.ActivityMainBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     FloatingActionButton moody;
 
-    ImageButton home_image;
+    ImageButton back_home;
+    Home homeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new Home());
                     break;
                 case R.id.navigation_product:
-                    replaceFragment(new Product());
+                    replaceFragment(new Review());
                     break;
                 case R.id.navigation_store:
                     replaceFragment(new Store());
