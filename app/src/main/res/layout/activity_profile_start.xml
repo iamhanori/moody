@@ -18,10 +18,11 @@
         <!--        android:layout_height="wrap_content"-->
         <!--        android:src="@drawable/backward1" />-->
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/backward3"
+            android:background="@android:color/transparent"
             android:paddingTop="30sp"/>
 
         <TextView
@@ -52,16 +53,18 @@
                 android:src="@drawable/profile_insert"
                 android:layout_gravity="center"/>
 
-            <ImageView
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/profile_insert_2"
+                android:background="@android:color/transparent"
                 android:layout_gravity="center"/>
 
-            <ImageView
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/plus"
+                android:background="@android:color/transparent"
                 android:layout_gravity="center"/>
         </FrameLayout>
 
