@@ -1,5 +1,7 @@
 package com.example.moody;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -9,10 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Profile extends Fragment {
 
     private Button updateProfile;
+    private TextView logoutText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,6 +32,24 @@ public class Profile extends Fragment {
                 Intent intent = new Intent(getActivity(), ProfileStartActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
+            }
+        });
+
+        logoutText = (TextView) view.findViewById(R.id.logout_text);
+        logoutText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(getActivity()).setTitle("로그아웃").setMessage("로그아웃 하시겠습니까?").setIcon(R.drawable.moody).setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getActivity(), "로그아웃 하였습니다.", Toast.LENGTH_LONG).show();
+                    }
+                }).setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getActivity(), "로그아웃을 취소하였습니다.", Toast.LENGTH_LONG).show();
+                    }
+                }).show();
             }
         });
 

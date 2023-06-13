@@ -1,5 +1,6 @@
 package com.example.moody;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,5 +25,9 @@ public class MetaverseActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        // 앱바 없애기
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
 }
