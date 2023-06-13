@@ -51,10 +51,11 @@
         android:layout_marginTop="20sp"
         android:layout_marginBottom="30sp"/>
 
-    <Button
+    <android.widget.Button
         android:id="@+id/review_add_img"
         android:layout_width="100sp"
         android:layout_height="100sp"
+        android:backgroundTint="@color/white"
         android:background="@drawable/btn_border"/>
 
     <EditText
