@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class Store extends Fragment {
-    private ImageView iv_cart;
+    private ImageButton iv_cart;
     private ImageButton iv_search;
 
     private RecyclerView recyclerView;
