@@ -96,7 +96,7 @@ public class Store extends Fragment {
         adapter = new RankCustomAdapter(rankList, getActivity());
         recyclerView.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
 
-       return view;
+        return view;
 
     }
 

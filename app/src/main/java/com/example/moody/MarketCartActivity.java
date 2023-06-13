@@ -25,7 +25,9 @@ public class MarketCartActivity extends AppCompatActivity {
         cart_backward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MarketCartActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
