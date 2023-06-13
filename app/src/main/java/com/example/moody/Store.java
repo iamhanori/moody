@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 
 public class Store extends Fragment {
     private ImageView iv_cart;
+    private ImageButton iv_search;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -44,6 +46,16 @@ public class Store extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MarketCartActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+
+        iv_search = view.findViewById(R.id.iv_search);
+        iv_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
