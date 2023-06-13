@@ -29,7 +29,6 @@
             android:text="장바구니"
             android:textColor="@color/gray_10"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:gravity="center"/>
     </FrameLayout>
 
@@ -69,7 +68,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="/ "
+            android:text="/"
             android:textSize="15sp"
             android:textColor="@color/gray_5"
             android:layout_gravity="center_vertical"
