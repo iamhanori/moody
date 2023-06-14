@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Moody"
         tools:targetApi="33">
         <activity
+            android:name=".ProfileUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeInfoActivity"
             android:exported="false" />
         <activity
@@ -58,7 +61,7 @@
             android:exported="true" />
         <activity
             android:name=".Store"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -29,7 +29,7 @@ public class Profile extends Fragment {
         updateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ProfileStartActivity.class);
+                Intent intent = new Intent(getActivity(), ProfileUpdateActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }

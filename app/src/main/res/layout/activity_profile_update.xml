@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignUpActivity">
+    tools:context=".ProfileUpdateActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         <!--        android:src="@drawable/backward1" />-->
 
         <ImageButton
-            android:id="@+id/btn_back_profile_start"
+            android:id="@+id/btn_back_profile_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/backward3"
@@ -29,17 +29,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="반가워요!"
-            android:textSize="18sp"
+            android:text="프로필 수정"
+            android:textSize="20sp"
             android:textColor="@color/gray_10"
-            android:paddingTop="40sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="프로필을 등록해 주세요."
-            android:textSize="25sp"
-            android:textColor="@color/gray_10"/>
+            android:gravity="center" />
 
         <FrameLayout
             android:layout_width="match_parent"

@@ -6,23 +6,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class ProfileStartActivity extends AppCompatActivity {
+public class ProfileUpdateActivity extends AppCompatActivity {
 
     ImageButton backImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_start);
+        setContentView(R.layout.activity_profile_update);
 
-        backImg = findViewById(R.id.btn_back_profile_start);
+        backImg = findViewById(R.id.btn_back_profile_update);
         backImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfileStartActivity.this, MainActivity.class);
+                Intent intent = new Intent(ProfileUpdateActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
