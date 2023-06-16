@@ -14,8 +14,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
 public class Profile extends Fragment {
 
+    private FirebaseAuth mFirebaseAuth;
     private Button updateProfile;
     private TextView logoutText;
 
@@ -24,6 +28,8 @@ public class Profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
 
         updateProfile = (Button) view.findViewById(R.id.btn_update_profile);
         updateProfile.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +48,7 @@ public class Profile extends Fragment {
                 new AlertDialog.Builder(getActivity()).setTitle("로그아웃").setMessage("로그아웃 하시겠습니까?").setIcon(R.drawable.moody).setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        mFirebaseAuth.signOut();
                         Toast.makeText(getActivity(), "로그아웃 하였습니다.", Toast.LENGTH_LONG).show();
                     }
                 }).setNegativeButton("취소", new DialogInterface.OnClickListener() {
