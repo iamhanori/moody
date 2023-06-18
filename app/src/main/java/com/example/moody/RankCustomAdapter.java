@@ -61,6 +61,4 @@ public class RankCustomAdapter extends RecyclerView.Adapter<RankCustomAdapter.Ra
             this.tv_detail = itemView.findViewById(R.id.tv_detail);
         }
     }
-
-
 }

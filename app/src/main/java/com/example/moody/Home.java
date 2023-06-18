@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -40,36 +40,7 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.productView);
-        // recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-        productList = new ArrayList<>();
         home_info_img = (ImageButton) view.findViewById(R.id.home_info_img);
-        btn_search = (ImageButton) view.findViewById(R.id.btn_search);
-
-        database = FirebaseDatabase.getInstance();
-
-        databaseReference = database.getReference("productList");
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                productList.clear();
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    ProductData productdata = snapshot.getValue(ProductData.class);
-                    productList.add(productdata);
-                }
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("Home", String.valueOf(error.toException()));
-            }
-        });
-        adapter = new ProductCustomAdapter(productList, getActivity());
-        recyclerView.setAdapter(adapter);
-
         home_info_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,6 +50,7 @@ public class Home extends Fragment {
             }
         });
 
+        btn_search = (ImageButton) view.findViewById(R.id.btn_search);
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,6 +59,36 @@ public class Home extends Fragment {
                 startActivity(intent);
             }
         });
+
+        //// market product database
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.productView);
+        // recyclerView.setHasFixedSize(true);
+        layoutManager = new GridLayoutManager(getContext(), 2);
+        recyclerView.setLayoutManager(layoutManager);
+        productList = new ArrayList<>();
+
+        database = FirebaseDatabase.getInstance();
+
+        databaseReference = database.getReference("productList");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                productList.clear();
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    ProductData pd = snapshot.getValue(ProductData.class);
+                    productList.add(pd);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Home", String.valueOf(error.toException()));
+            }
+        });
+        adapter = new ProductCustomAdapter(productList, getContext());
+        recyclerView.setAdapter(adapter);
 
         return view;
     }

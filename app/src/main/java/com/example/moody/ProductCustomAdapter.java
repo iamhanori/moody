@@ -15,20 +15,20 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class ProductCustomAdapter extends RecyclerView.Adapter<ProductCustomAdapter.ProductViewHolder> {
+    private ArrayList<ProductData> productList;
+    private Context context;
 
     public ProductCustomAdapter(ArrayList<ProductData> productList, Context context) {
         this.productList = productList;
         this.context = context;
     }
 
-    private ArrayList<ProductData> productList;
-    private Context context;
-
     @NonNull
     @Override
     public ProductCustomAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.marketdetail_item, parent, false);
         ProductViewHolder holder = new ProductViewHolder(view);
+
         return holder;
     }
 

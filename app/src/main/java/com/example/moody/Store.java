@@ -40,7 +40,6 @@ public class Store extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_store, container, false);
 
-
         iv_cart = view.findViewById(R.id.iv_cart);
         iv_cart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,10 +93,9 @@ public class Store extends Fragment {
         });
 
         adapter = new RankCustomAdapter(rankList, getActivity());
-        recyclerView.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
+        recyclerView.setAdapter(this.adapter); // 리사이클러뷰에 어댑터 연결
 
         return view;
 
     }
-
 }
