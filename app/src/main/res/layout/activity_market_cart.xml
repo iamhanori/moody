@@ -96,31 +96,16 @@
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"/>
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15sp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20sp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="회사명"
-            android:textSize="18sp"
-            android:textColor="@color/gray_10"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="배송상품"
-            android:textSize="18sp"
-            android:textColor="@color/gray_10"
-            android:textStyle="bold"
-            android:layout_marginStart="5sp"/>
-    </LinearLayout>
+        android:text="배송상품"
+        android:textSize="18sp"
+        android:textColor="@color/gray_10"
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
