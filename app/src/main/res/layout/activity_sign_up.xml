@@ -63,9 +63,9 @@
             android:layout_height="50dp"
             android:backgroundTint="@color/gray_4"
             android:hint="영문, 숫자, 특수문자 조합 8자리 이상"
-            android:drawableEnd="@drawable/eye"
             android:paddingTop="20sp"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:inputType="textPassword"/>
 
         <EditText
             android:id="@+id/upet_repassword"
@@ -73,9 +73,9 @@
             android:layout_height="50dp"
             android:backgroundTint="@color/gray_4"
             android:hint="비밀번호 재확인"
-            android:drawableEnd="@drawable/eye"
             android:paddingTop="20sp"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:inputType="textPassword"/>
 
         <View
             android:layout_width="match_parent"
