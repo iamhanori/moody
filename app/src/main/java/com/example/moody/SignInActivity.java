@@ -28,6 +28,8 @@ public class SignInActivity extends AppCompatActivity {
     private Button inbtn_Next; // 다음 버튼
 
     private TextView tv_signup; // 회원가입하기
+    private TextView tv_findID; // 아이디 찾기
+    private TextView tv_changePW;   // 비밀번호 변경
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class SignInActivity extends AppCompatActivity {
         et_Pwd = findViewById(R.id.inet_password);
         inbtn_Next = findViewById(R.id.inbtn_next);
         tv_signup = (TextView) findViewById(R.id.intv_signup);
+        tv_findID = (TextView) findViewById(R.id.intv_findId);
+        tv_changePW = (TextView) findViewById(R.id.intv_changePw);
 
         inbtn_Next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +80,22 @@ public class SignInActivity extends AppCompatActivity {
                 Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        tv_findID.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast toast = Toast.makeText(getApplicationContext(), "오픈 전인 서비스입니다!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        tv_changePW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast toast = Toast.makeText(getApplicationContext(), "오픈 전인 서비스입니다!", Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
 
