@@ -15,19 +15,36 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class RankCustomAdapter extends RecyclerView.Adapter<RankCustomAdapter.RankCustomViewHolder> {
+    private final RankRecyclerViewInterface recyclerViewInterface;
+
+    public interface OnItemClickListener {
+        void onItemClick(int pos);
+    }
+
+    private OnItemClickListener onItemClickListener = null;
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
+    }
+
+    public interface OnLongItemClickListener {
+        void onLongItemClick(int pos);
+    }
+
     private ArrayList<RankData> rankList;
     private Context context;
 
-    public RankCustomAdapter(ArrayList<RankData> rankList, Context context) {
+    public RankCustomAdapter(ArrayList<RankData> rankList, Context context, RankRecyclerViewInterface recyclerViewInterface) {
         this.rankList = rankList;
         this.context = context;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
     @Override
     public RankCustomAdapter.RankCustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ranklist_item, parent, false);
-        RankCustomViewHolder holder = new RankCustomViewHolder(view);
+        RankCustomViewHolder holder = new RankCustomViewHolder(view, recyclerViewInterface);
 
         return holder;
     }
@@ -53,12 +70,25 @@ public class RankCustomAdapter extends RecyclerView.Adapter<RankCustomAdapter.Ra
         ImageView iv_market;
         TextView tv_name;
         TextView tv_detail;
-        public RankCustomViewHolder(@NonNull View itemView) {
+        public RankCustomViewHolder(@NonNull View itemView, RankRecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             this.iv_market = itemView.findViewById(R.id.iv_market);
             this.tv_ranking = itemView.findViewById(R.id.tv_ranking);
             this.tv_name = itemView.findViewById(R.id.tv_name);
             this.tv_detail = itemView.findViewById(R.id.tv_detail);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(recyclerViewInterface != null) {
+                        int pos = getAdapterPosition();
+
+                        if(pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }

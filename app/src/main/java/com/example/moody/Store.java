@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Store extends Fragment {
+public class Store extends Fragment implements RankRecyclerViewInterface{
     private ImageButton iv_cart;
     private ImageButton iv_search;
 
@@ -39,6 +39,7 @@ public class Store extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_store, container, false);
+
 
         iv_cart = view.findViewById(R.id.iv_cart);
         iv_cart.setOnClickListener(new View.OnClickListener() {
@@ -92,10 +93,18 @@ public class Store extends Fragment {
             }
         });
 
-        adapter = new RankCustomAdapter(rankList, getActivity());
-        recyclerView.setAdapter(this.adapter); // 리사이클러뷰에 어댑터 연결
+        adapter = new RankCustomAdapter(rankList, getActivity(), this);
+        recyclerView.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
 
         return view;
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), Market.class);
+//        intent.putExtra("name", RankData.getInt(position).getName());
+
+        startActivity(intent);
     }
 }
