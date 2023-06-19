@@ -8,7 +8,6 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         moody.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, M.class);
+                Intent intent = new Intent(MainActivity.this, Market.class);
                 startActivity(intent);
                 finish();
             }

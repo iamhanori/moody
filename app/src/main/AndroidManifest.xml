@@ -37,7 +37,7 @@
             android:name=".MetaverseActivity"
             android:exported="false" />
         <activity
-            android:name=".M"
+            android:name=".Market"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
