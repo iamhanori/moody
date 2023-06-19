@@ -46,7 +46,7 @@
 
             </FrameLayout>
 
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/market_list"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -55,41 +55,6 @@
                 android:textColor="@color/gray_10"/>
 
         </LinearLayout>
-
-<!--        <com.google.android.material.bottomappbar.BottomAppBar-->
-<!--            android:id="@+id/nav_host_fragment_activity_market"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            app:backgroundTint="@color/gray_1">-->
-
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-
-<!--                <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--                    android:id="@+id/navView"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="56dp"-->
-<!--                    android:layout_marginRight="16dp"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    app:menu="@menu/bottom_nav_menu"/>-->
-
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--        </com.google.android.material.bottomappbar.BottomAppBar>-->
-
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/categories"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:src="@drawable/moody"-->
-<!--            app:backgroundTint="@color/normal"-->
-<!--            app:layout_anchor="@id/navigation"-->
-<!--            app:tint="@android:color/white" />-->
-
-
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

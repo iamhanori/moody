@@ -41,6 +41,6 @@
             android:src="@drawable/moody"
             android:backgroundTint="@color/normal"
             app:layout_anchor="@id/navigation"
-            android:tint="@color/white" />
+            app:tint="@null" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
