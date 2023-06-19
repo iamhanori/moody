@@ -37,7 +37,7 @@ public class Review extends Fragment {
             }
         });
 
-        btn_add_review = view.findViewById(R.id.btn_add_review);
+        btn_add_review = (FloatingActionButton) view.findViewById(R.id.btn_add_review);
         btn_add_review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
