@@ -1,5 +1,6 @@
 package com.example.moody;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 
 // login
 public class SignInActivity extends AppCompatActivity {
@@ -86,16 +89,16 @@ public class SignInActivity extends AppCompatActivity {
         tv_findID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(getApplicationContext(), "오픈 전인 서비스입니다!", Toast.LENGTH_SHORT);
-                toast.show();
+                Context context = SignInActivity.this;
+                new StyleableToast.Builder(context).text("오픈 전인 서비스입니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
             }
         });
 
         tv_changePW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(getApplicationContext(), "오픈 전인 서비스입니다!", Toast.LENGTH_SHORT);
-                toast.show();
+                Context context = SignInActivity.this;
+                new StyleableToast.Builder(context).text("오픈 전인 서비스입니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
             }
         });
 

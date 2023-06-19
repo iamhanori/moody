@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;   // 파이어베이스 인증
@@ -57,6 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
                 mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        Context context = SignUpActivity.this;
                         if(task.isSuccessful()) {
                             FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
                             UserAccount account = new UserAccount();
@@ -65,9 +69,9 @@ public class SignUpActivity extends AppCompatActivity {
                             account.setPassword(strPwd);
 
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
-                            Toast.makeText(SignUpActivity.this, "회원 등록 성공", Toast.LENGTH_LONG).show();
+                            new StyleableToast.Builder(context).text("오픈 전인 서비스입니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(SignUpActivity.this, "회원 등록 실패", Toast.LENGTH_LONG).show();
+                            new StyleableToast.Builder(context).text("오픈 전인 서비스입니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

@@ -1,6 +1,7 @@
 package com.example.moody;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Profile extends Fragment {
 
@@ -45,16 +48,17 @@ public class Profile extends Fragment {
         logoutText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Context context = getContext();
                 new AlertDialog.Builder(getActivity()).setTitle("로그아웃").setMessage("로그아웃 하시겠습니까?").setIcon(R.drawable.moody).setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         mFirebaseAuth.signOut();
-                        Toast.makeText(getActivity(), "로그아웃 하였습니다.", Toast.LENGTH_LONG).show();
+                        new StyleableToast.Builder(context).text("로그아웃 하였습니다").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
                     }
                 }).setNegativeButton("취소", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getActivity(), "로그아웃을 취소하였습니다.", Toast.LENGTH_LONG).show();
+                        new StyleableToast.Builder(context).text("로그아웃을 취소하였습니다.").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
                     }
                 }).show();
             }
