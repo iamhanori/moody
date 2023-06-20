@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Store extends Fragment implements RankRecyclerViewInterface{
+public class Store extends Fragment implements RankRecyclerViewInterface {
     private ImageButton iv_cart;
     private ImageButton iv_search;
 
@@ -67,7 +67,8 @@ public class Store extends Fragment implements RankRecyclerViewInterface{
         // recyclerView.setHasFixedSize(true);
         layoutManger = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManger);
-        rankList = new ArrayList<>();;
+        rankList = new ArrayList<>();
+        ;
 
         //FirebaseData
         database = FirebaseDatabase.getInstance();
@@ -79,7 +80,7 @@ public class Store extends Fragment implements RankRecyclerViewInterface{
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // firedatabase의 데이터를 받아오는 곳
                 rankList.clear(); // 초기화
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     RankData rd = snapshot.getValue(RankData.class); // 만들어뒀던 RankData에 객체담기
                     rankList.add(rd);
                 }
@@ -100,11 +101,12 @@ public class Store extends Fragment implements RankRecyclerViewInterface{
 
     }
 
+
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), Market.class);
-//        intent.putExtra("name", RankData.getInt(position).getName());
-
+        intent.putExtra("market", rankList.get(position).getMarket());
+        intent.putExtra("name", rankList.get(position).getName());
         startActivity(intent);
     }
 }

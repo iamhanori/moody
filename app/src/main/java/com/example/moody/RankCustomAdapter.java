@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class RankCustomAdapter extends RecyclerView.Adapter<RankCustomAdapter.RankCustomViewHolder> {
-    private final RankRecyclerViewInterface recyclerViewInterface;
+    private RankRecyclerViewInterface  itemClickListener;
 
     public interface OnItemClickListener {
         void onItemClick(int pos);
@@ -34,17 +34,17 @@ public class RankCustomAdapter extends RecyclerView.Adapter<RankCustomAdapter.Ra
     private ArrayList<RankData> rankList;
     private Context context;
 
-    public RankCustomAdapter(ArrayList<RankData> rankList, Context context, RankRecyclerViewInterface recyclerViewInterface) {
+    public RankCustomAdapter(ArrayList<RankData> rankList, Context context, RankRecyclerViewInterface itemClickListener) {
         this.rankList = rankList;
         this.context = context;
-        this.recyclerViewInterface = recyclerViewInterface;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
     @Override
     public RankCustomAdapter.RankCustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ranklist_item, parent, false);
-        RankCustomViewHolder holder = new RankCustomViewHolder(view, recyclerViewInterface);
+        RankCustomViewHolder holder = new RankCustomViewHolder(view, itemClickListener);
 
         return holder;
     }
@@ -57,6 +57,7 @@ public class RankCustomAdapter extends RecyclerView.Adapter<RankCustomAdapter.Ra
                 .into(holder.iv_market);
         holder.tv_name.setText(rankList.get(position).getName());
         holder.tv_detail.setText(rankList.get(position).getDetail());
+
     }
 
     @Override

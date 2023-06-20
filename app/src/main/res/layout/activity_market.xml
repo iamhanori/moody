@@ -53,11 +53,13 @@
                 android:layout_marginTop="50sp">
 
                 <ImageView
+                    android:id="@+id/mid_market"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/market_img"/>
 
                 <TextView
+                    android:id="@+id/mtv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="회사명"
