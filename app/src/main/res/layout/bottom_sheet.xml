@@ -56,6 +56,7 @@
             android:layout_marginBottom="20sp">
 
             <ImageButton
+                android:id="@+id/btn_minus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/minus_btn"
@@ -63,6 +64,7 @@
                 android:layout_marginStart="10sp"/>
 
             <TextView
+                android:id="@+id/num_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
@@ -72,6 +74,7 @@
                 android:textStyle="bold"/>
 
             <ImageButton
+                android:id="@+id/btn_plus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/plus_btn"
