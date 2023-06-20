@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,26 +14,41 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class ProductCustomAdapter extends RecyclerView.Adapter<ProductCustomAdapter.ProductViewHolder> {
+public class ProductCustomAdapter extends RecyclerView.Adapter<ProductCustomAdapter.ProductCustomViewHolder> {
+    private ProductRecyclerViewInterface itemClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int pos);
+    }
+
+    private OnItemClickListener onItemClickListener = null;
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
+    }
+
+    public interface OnLongItemClickListener {
+        void onLongItemClick(int pos);
+    }
+
     private ArrayList<ProductData> productList;
     private Context context;
 
-    public ProductCustomAdapter(ArrayList<ProductData> productList, Context context) {
+    public ProductCustomAdapter(ArrayList<ProductData> productList, Context context, ProductRecyclerViewInterface itemClickListener) {
         this.productList = productList;
         this.context = context;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
-    @Override
-    public ProductCustomAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProductCustomAdapter.ProductCustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.marketdetail_item, parent, false);
-        ProductViewHolder holder = new ProductViewHolder(view);
+        ProductCustomViewHolder holder = new ProductCustomViewHolder(view, itemClickListener);
 
         return holder;
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ProductCustomAdapter.ProductViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProductCustomViewHolder holder, int position) {
         Glide.with(holder.itemView)
                 .load(productList.get(position).getProduct())
                 .into(holder.iv_product);
@@ -41,21 +56,33 @@ public class ProductCustomAdapter extends RecyclerView.Adapter<ProductCustomAdap
         holder.tv_name.setText(productList.get(position).getName());
     }
 
-    @Override
     public int getItemCount() {
         return (productList != null ? productList.size() : 0);
     }
 
-    public class ProductViewHolder extends RecyclerView.ViewHolder{
-        ImageView iv_product;
+    public class ProductCustomViewHolder extends RecyclerView.ViewHolder {
+        ImageButton iv_product;
         TextView tv_price;
         TextView tv_name;
 
-        public ProductViewHolder(@NonNull View itemView) {
+        public ProductCustomViewHolder(@NonNull View itemView, ProductRecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             this.iv_product = itemView.findViewById(R.id.iv_product);
             this.tv_price = itemView.findViewById(R.id.tv_price);
             this.tv_name = itemView.findViewById(R.id.tv_name);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(recyclerViewInterface != null) {
+                        int pos = getAdapterPosition();
+
+                        if(pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }

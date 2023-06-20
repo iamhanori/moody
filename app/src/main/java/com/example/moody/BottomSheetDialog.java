@@ -33,6 +33,8 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         view = inflater.inflate(R.layout.bottom_sheet, container, false);
 
         mListener = (BottomSheetListener) getContext();
+
+        numTextView = (TextView) view.findViewById(R.id.num_text);
         numTextView.setText(num+"");
 
         btn_cart = view.findViewById(R.id.btn_cart);
@@ -61,7 +63,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             @Override
             public void onClick(View view) {
                 Context context = getContext();
-                if(num < 0) {
+                if(num < 1) {
                     new StyleableToast.Builder(context).text("0개 아래의 상품은 구매하실 수 없습니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
                 }
                 else {

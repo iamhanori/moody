@@ -1,5 +1,6 @@
 package com.example.moody;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -15,6 +16,10 @@ public class ProductActivity extends AppCompatActivity implements BottomSheetDia
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
+
+        // 앱바 없애기
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         btn_buy_product = findViewById(R.id.btn_buy_product);
         btn_buy_product.setOnClickListener(new View.OnClickListener() {
