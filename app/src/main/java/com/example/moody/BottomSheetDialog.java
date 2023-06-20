@@ -1,6 +1,7 @@
 package com.example.moody;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,14 +46,22 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             public void onClick(View v) {
                 mListener.onButtonClicked("장바구니 이동");
                 dismiss();
+
+                Intent intent = new Intent(getActivity(), MarketCartActivity.class);
+                startActivity(intent);
             }
         });
 
         btn_buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Context context = getContext();
+                new StyleableToast.Builder(context).text("구매 완료! 곧 자택으로 배송됩니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
                 mListener.onButtonClicked("바로 구매");
                 dismiss();
+
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
