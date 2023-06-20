@@ -17,6 +17,7 @@ public class Market extends AppCompatActivity {
 
     ImageView market_img;
     TextView market_name;
+    ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,16 @@ public class Market extends AppCompatActivity {
 
       //  market_img.setText(market);
         market_name.setText(name);
+
+        btnBack = findViewById(R.id.btn_market_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Market.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 }

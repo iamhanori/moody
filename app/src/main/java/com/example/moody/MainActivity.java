@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         moody.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Market.class);
+                Intent intent = new Intent(MainActivity.this, MetaverseActivity.class);
                 startActivity(intent);
                 finish();
             }
