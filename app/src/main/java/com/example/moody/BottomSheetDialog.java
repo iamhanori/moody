@@ -62,7 +62,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             public void onClick(View view) {
                 Context context = getContext();
                 if(num < 0) {
-                    new StyleableToast.Builder(context).text("오픈 전인 서비스입니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
+                    new StyleableToast.Builder(context).text("0개 아래의 상품은 구매하실 수 없습니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
                 }
                 else {
                     num--;
