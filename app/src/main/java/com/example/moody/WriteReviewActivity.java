@@ -8,27 +8,39 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 
 public class WriteReviewActivity extends AppCompatActivity {
     Button addReviewBtn;
+    ImageButton writeBackBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_review);
 
-        addReviewBtn = findViewById(R.id.btn_add_review);
+        addReviewBtn = (Button) findViewById(R.id.btn_add_review);
 
         addReviewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context = WriteReviewActivity.this;
-                new StyleableToast.Builder(context).text("후기를 등록하였습니다!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(WriteReviewActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
-                Intent intent = new Intent(WriteReviewActivity.this, Review.class);
+        writeBackBtn = findViewById(R.id.btn_write_back);
+        writeBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = WriteReviewActivity.this;
+                new StyleableToast.Builder(context).text("리뷰 등록 완료!").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(WriteReviewActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -27,7 +27,7 @@ public class Review extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_review, container, false);
 
-        btn_search = view.findViewById(R.id.btn_search);
+        btn_search = (ImageButton) view.findViewById(R.id.btn_search);
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
