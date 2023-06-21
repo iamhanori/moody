@@ -44,11 +44,11 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         btn_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Context context = getContext();
+                new StyleableToast.Builder(context).text("현재 오픈 준비 중인 서비스입니다.").iconStart(R.drawable.moody).length(Toast.LENGTH_SHORT).show();
+
                 mListener.onButtonClicked("장바구니 이동");
                 dismiss();
-
-                Intent intent = new Intent(getActivity(), MarketCartActivity.class);
-                startActivity(intent);
             }
         });
 
