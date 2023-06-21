@@ -28,7 +28,7 @@
                 android:id="@+id/inet_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아이디"
+                android:text="#moody"
                 android:textSize="20sp"
                 android:textColor="@color/gray_10"
                 android:paddingTop="300dp"
