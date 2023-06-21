@@ -73,7 +73,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/market_img"
+                android:src="@drawable/market_img01"
                 android:layout_marginEnd="15sp"/>
 
             <LinearLayout
