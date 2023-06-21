@@ -90,16 +90,16 @@ public class WriteReviewActivity extends AppCompatActivity {
 
     void saveNoteToFirebase(ReviewData rd) {
         DocumentReference documentReference;
-        documentReference = Review.getCollectionReferenceForNotes().document();
+        documentReference = Utility.getCollectionReferenceForNotes().document();
 
         documentReference.set(rd).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Review.showToast(WriteReviewActivity.this, "success");
+                    Utility.showToast(WriteReviewActivity.this, "success");
                     finish();
                 } else {
-                    Review.showToast(WriteReviewActivity.this, "failed");
+                    Utility.showToast(WriteReviewActivity.this, "failed");
                 }
             }
         });
