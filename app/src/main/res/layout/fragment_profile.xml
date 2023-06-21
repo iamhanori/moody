@@ -52,7 +52,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="아이디"
+                            android:text="#moody"
                             android:textColor="@color/gray_10"
                             android:textSize="18sp"
                             android:textStyle="bold"/>
@@ -69,7 +69,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="이메일"
+                        android:text="moody01@gmail.com"
                         android:layout_marginTop="3sp"/>
                 </LinearLayout>
 
